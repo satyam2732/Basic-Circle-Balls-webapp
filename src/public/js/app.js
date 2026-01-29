@@ -300,6 +300,13 @@ document.addEventListener('DOMContentLoaded', () => {
       // Spawn initial ball at +10°
       balls.push(createBall(10));
       updateBallCount();
+
+      // Restart animation
+      isPlaying = true;
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+      animationFrameId = requestAnimationFrame(animateBall);
     });
   }
 
@@ -589,15 +596,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       removeBall(ballsToRemove[i]);
 
-      // Calculate delay: base 1s + 1s for each subsequent pair
-      // Each pair takes 0.5s to spawn (first ball + 0.5s for second ball)
-      // Plus 0.5s gap before next pair = 1s total between pair starts
+      // Calculate delay: base 100ms + 100ms for each subsequent pair
       const pairIndex = ballsToRemove.length - 1 - i; // 0 for first, 1 for second, etc.
-      const delay = 1000 + (pairIndex * 1000); // 1s, 2s, 3s, etc.
+      const delay = 100 + (pairIndex * 100); // 100ms, 200ms, 300ms, etc.
 
       setTimeout(() => {
         spawnBalls();
-        lastSpawnTime = Date.now() + 500; // Mark when this pair will complete (current time + 0.5s for second ball)
+        lastSpawnTime = Date.now() + 50; // Mark when this pair will complete (current time + 50ms for second ball)
       }, delay);
 
       // Stop animation if we've reached more than 200 balls
