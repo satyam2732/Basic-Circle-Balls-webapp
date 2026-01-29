@@ -380,11 +380,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Update message based on ball count
     if (ballMessageDisplay) {
       if (balls.length === 1) {
-        ballMessageDisplay.textContent = 'let see what happen when ball get out of circle';
-      } else if (balls.length >= 2 && balls.length <= 10) {
-        ballMessageDisplay.textContent = 'two balls generate when one goes out of circle.';
-      } else if (balls.length >= 11) {
-        ballMessageDisplay.textContent = 'lets see what happen at last..';
+        ballMessageDisplay.textContent = 'Lets see what happens when ball get out of the circle';
+      } else if (balls.length >= 2 && balls.length <= 15) {
+        ballMessageDisplay.textContent = 'Two balls generate when one goes out of the circle';
+      } else if (balls.length >= 16) {
+        ballMessageDisplay.textContent = 'Lets see what happens at the last..';
       }
     }
   }
