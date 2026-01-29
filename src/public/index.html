@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Rotating Circle App</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="controls">
+      <div class="control">
+        <label>Rotation Speed</label>
+        <div class="control-group">
+          <button id="speed-up">+</button>
+          <span id="speed-display">2s</span>
+          <button id="speed-down">-</button>
+        </div>
+      </div>
+
+      <div class="control">
+        <label>Break Size</label>
+        <div class="control-group">
+          <button id="break-more">+</button>
+          <span id="break-display">30°</span>
+          <button id="break-less">-</button>
+        </div>
+      </div>
+
+      <div class="control">
+        <label>Ball Speed</label>
+        <div class="control-group">
+          <button id="speed-ball-up">+</button>
+          <span id="ball-speed-display">2.0</span>
+          <button id="speed-ball-down">-</button>
+        </div>
+      </div>
+
+      <div class="control">
+        <button id="reset">Reset</button>
+      </div>
+    </div>
+
+    <div class="circle-section">
+      <div class="ball-message" id="ball-message">
+        let see what happen when ball get out of circle
+      </div>
+
+      <div class="ball-counter">
+        <label>Balls Generated:</label>
+        <span id="total-balls-display">0</span>
+      </div>
+
+      <div class="ball-counter">
+        <label>Active Balls:</label>
+        <span id="ball-count-display">0</span>
+      </div>
+
+      <div class="circle-container">
+        <svg id="circle-svg" width="300" height="300" viewBox="0 0 200 200" overflow="visible">
+          <circle cx="100" cy="100" r="80" stroke="#4CAF50" stroke-width="4" fill="none" stroke-dasharray="440 60" />
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>

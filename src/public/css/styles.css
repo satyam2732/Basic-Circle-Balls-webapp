@@ -1,0 +1,187 @@
+/* Premium styling */
+:root {
+  --primary-color: #4CAF50;
+  --secondary-color: #2196F3;
+  --accent-color: #FF5722;
+  --text-color: #333;
+  --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --border-radius: 12px;
+  --transition: all 0.3s ease;
+  --rotation-duration: 2s;
+  --rectangle-width: 400px;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg-gradient);
+  color: var(--text-color);
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  padding: 40px;
+}
+
+.circle-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.ball-message {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 10px;
+  min-height: 40px;
+  max-width: var(--rectangle-width);
+  word-wrap: break-word;
+}
+
+.ball-counter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.ball-counter label {
+  font-weight: 600;
+}
+
+.circle-container {
+  width: var(--rectangle-width);
+  height: var(--rectangle-width);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 8px;
+  overflow: visible;
+  box-sizing: border-box;
+}
+
+#circle-svg {
+  /* No rotation on SVG - rotation applied to circle only */
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Remove CSS variable for break */
+circle {
+  /* stroke-dasharray set in JS */
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.control {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.control label {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text-color);
+}
+
+.control-group {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+#speed-display, #break-display {
+  font-weight: bold;
+  font-size: 18px;
+  color: var(--primary-color);
+}
+
+#ball-count-display {
+  font-weight: bold;
+  font-size: 24px;
+  color: var(--primary-color);
+}
+
+#total-balls-display {
+  font-weight: bold;
+  font-size: 28px;
+  color: #4CAF50;
+}
+
+button {
+  font-size: 16px;
+  padding: 12px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: var(--border-radius);
+  background: #fff;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.3);
+  background: var(--primary-color);
+  color: #fff;
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  :root {
+    --rectangle-width: 300px;
+  }
+  .container {
+    padding: 20px;
+    flex-direction: column;
+  }
+  .circle-section {
+    width: 100%;
+  }
+  #circle-svg {
+    width: 250px;
+    height: 250px;
+  }
+  .controls {
+    align-items: center;
+  }
+}
